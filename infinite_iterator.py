@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+
+
 class InfiniteAddition:
     """Provides infinite sequential addition 1 to given number"""
 
@@ -14,6 +18,7 @@ class InfiniteAddition:
         """Update the value and return the result"""
         self.number_to_add = self.number_to_add + 1
         return self.number_to_add
+
 
 if __name__ == '__main__':
     start = InfiniteAddition(3)
