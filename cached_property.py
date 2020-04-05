@@ -1,6 +1,3 @@
-#!/usr/bin/python3
-# -*- coding: UTF-8 -*-
-
 class cached_property:
     """Allows you to calculate attributes directly when they are accessed
 
