@@ -20,8 +20,7 @@ def logged(time_format='%b %d %Y - %H:%M:%S', separator=''):
             print(f'{separator}- Running {func.__qualname__}({arg_str}) on {time.strftime(time_format)}')
             start_time = time.time()
             result = func(*args, **kwargs)
-            end_time = time.time()
-            print(f'- Finished {func.__qualname__}({arg_str}), execution time = {end_time - start_time}s{separator}')
+            print(f'- Finished {func.__qualname__}({arg_str}), execution time = {time.time() - start_time}s{separator}')
             return result
         return decorated_func
     return decorator
