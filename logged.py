@@ -43,9 +43,7 @@ def logged(time_format='%b %d %Y - %H:%M:%S', separator='', mode: Modes = Modes.
             print(f'- Finished {func_disp}'
                   f'{arg_str}, execution time = {time.time() - start_time}s{separator}')
             return result
-
         return decorated_func
-
     return decorator
 
 
