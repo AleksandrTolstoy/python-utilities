@@ -38,7 +38,6 @@ class Memoized:
                 self._evict_cache_if_necessary()
             logging.debug(f'Execution time = {time.time() - start_time}s')
             return self.call_args_to_result[memoization_key]
-
         return wrapped
 
 
