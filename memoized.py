@@ -6,6 +6,8 @@ import logging
 from collections import deque
 from functools import wraps
 
+from timeit import timeit
+
 
 class Memoized:
 
@@ -42,7 +44,7 @@ class Memoized:
 
 
 if __name__ == '__main__':
-    logging.basicConfig(format='%(asctime)s: %(message)s', level=logging.DEBUG, datefmt='%H:%M:%S') # or INFO
+    logging.basicConfig(format='%(asctime)s: %(message)s', level=logging.INFO, datefmt='%H:%M:%S')  # or DEBUG
 
     @Memoized()
     def fib(n):
@@ -50,26 +52,22 @@ if __name__ == '__main__':
             return n
         return fib(n - 2) + fib(n - 1)
 
-    start_time = time.time()
-    print(f'Memoized recursive fib(40) = {fib(40)}')
-    print(f'Execution time = {time.time() - start_time}s')
+    with timeit('Execution time'):
+        print(f'Memoized recursive fib(40) = {fib(40)}')
 
-    start_time = time.time()
-    print(f'Memoized recursive fib(20) = {fib(20)}')
-    print(f'Execution time = {time.time() - start_time}s\n')
+    with timeit('Execution time'):
+        print(f'Memoized recursive fib(20) = {fib(20)}')
 
     def fib(n):
         if n < 2:
             return n
         return fib(n - 2) + fib(n - 1)
 
-    start_time = time.time()
-    print(f'Recursive fib(40) = {fib(40)}')
-    print(f'Execution time = {time.time() - start_time}s')
+    with timeit('Execution time'):
+        print(f'Recursive fib(40) = {fib(40)}')
 
-    start_time = time.time()
-    print(f'Recursive fib(20) = {fib(20)}')
-    print(f'Execution time = {time.time() - start_time}s\n')
+    with timeit('Execution time'):
+        print(f'Recursive fib(20) = {fib(20)}')
 
     @Memoized()
     def fib(n):
@@ -78,13 +76,11 @@ if __name__ == '__main__':
             a, b = b, a + b
         return b
 
-    start_time = time.time()
-    print(f'Memoized fib(900) = {fib(900)}')
-    print(f'Execution time = {time.time() - start_time}s')
+    with timeit('Execution time'):
+        print(f'Memoized fib(900) = {fib(900)}')
 
-    start_time = time.time()
-    print(f'Memoized fib(800) = {fib(800)}')
-    print(f'Execution time = {time.time() - start_time}s\n')
+    with timeit('Execution time'):
+        print(f'Memoized fib(900) = {fib(800)}')
 
     def fib(n):
         a, b = 1, 1
@@ -92,10 +88,8 @@ if __name__ == '__main__':
             a, b = b, a + b
         return b
 
-    start_time = time.time()
-    print(f'fib(900) = {fib(900)}')
-    print(f'Execution time = {time.time() - start_time}s')
+    with timeit('Execution time'):
+        print(f'Memoized fib(900) = {fib(900)}')
 
-    start_time = time.time()
-    print(f'fib(800) = {fib(800)}')
-    print(f'Execution time = {time.time() - start_time}s\n')
+    with timeit('Execution time'):
+        print(f'Memoized fib(900) = {fib(800)}')
