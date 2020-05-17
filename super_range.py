@@ -9,3 +9,5 @@ def super_range(start, stop, step):
 
 if __name__ == '__main__':
     print(list(super_range(1, 5, 0.2)))
+
+# Also you can use numpy.arange([start, ]stop, [step, ], dtype=None) -> numpy.ndarray
