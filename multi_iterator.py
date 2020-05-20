@@ -36,3 +36,6 @@ if __name__ == '__main__':
     for x in skipper:
         for y in skipper:
             print(x + y, end=' ')
+            
+# Also you can use itertools module for same things
+
