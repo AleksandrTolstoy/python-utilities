@@ -24,3 +24,5 @@ if __name__ == '__main__':
     start = InfiniteAddition(3)
     for next_ in start:
         print(next_)
+   
+# Also you can use itertools module for same things
