@@ -8,4 +8,6 @@ class cached_property:
 
     def __get__(self, instance, cls=None):
         result = instance.__dict__[self.func.__name__] = self.func(instance)
-        return result
+        return result   
+   
+# Also you can use @functools.cached_property(func)
