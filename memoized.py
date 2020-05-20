@@ -94,4 +94,4 @@ if __name__ == '__main__':
     with timeit('Execution time'):
         print(f'Memoized fib(900) = {fib(800)}')
         
-#Also you can use functools lru_cache as decorator
+#Also you can use @functools.cache(user_function) or @functools.lru_cache(user_function)
